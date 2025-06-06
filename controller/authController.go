@@ -26,7 +26,8 @@ func Login(c *gin.Context){
 	}
 
 	if services.Authenticate(input.Email, input.Password) {
-		c.JSON(http.StatusOK, gin.H{"message": "Login successful"})
+		c.SetCookie("isAuthenticated", "true", 3600, "/", "localhost", false, true)
+		c.JSON(http.StatusOK, gin.H{"success": true})
 	} else {
 		c.JSON(http.StatusUnauthorized, gin.H{"message": "Invalid credentials"})
 	}
@@ -54,5 +55,5 @@ func Register(c *gin.Context){
 		return
 	}
 
-	c.JSON(http.StatusCreated, gin.H{"message": "User registered successfully"})
+	c.JSON(http.StatusOK, gin.H{"success": true})
 }
