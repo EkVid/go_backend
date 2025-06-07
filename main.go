@@ -6,11 +6,26 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/cors"
 	"time"
+	"github.com/joho/godotenv"
+	"os"
+	"log"
 )
 
 func main() {
 
-	db.Connect();
+	// Load the .env file
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file:", err)
+	}
+
+	// Access environment variables
+	dbName := os.Getenv("DB_NAME")
+	dbUser := os.Getenv("DB_USER")
+	dbPassword := os.Getenv("DB_PASSWORD")
+
+	// connect to db
+	db.Connect(dbUser, dbPassword, dbName);
 
 	r := gin.Default()
 

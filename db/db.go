@@ -9,9 +9,9 @@ import (
 
 var DB *gorm.DB
 
-func Connect(){
-	dsn := "host=localhost user=test_user password=test dbname=go_backend_db port=5432 sslmode=disable"
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+func Connect(user, password, dbname string) {
+	dsn := fmt.Sprintf("host=localhost user=%s password=%s dbname=%s port=5432 sslmode=disable", user, password, dbname)
+   	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
         panic("Failed to connect to database!")
     }

@@ -1,0 +1,50 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Output of the go build command
+/build/
+*.log
+
+# Vendor directory (if you're using `go mod vendor`)
+/vendor/
+
+# Dependency directories (Go Modules)
+/go.sum
+/go.mod
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables and sensitive config files
+.env
+.env.local
+.env.*.local
+*.env
+
+# PostgreSQL database files (if any)
+*.sql
+
+# GoLand files
+*.iml
+*.ipr
+*.iws
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Compiled binary (if you build your server)
+main
