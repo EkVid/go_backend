@@ -40,8 +40,6 @@ GRANT ALL PRIVILEGES ON DATABASE go_backend_db TO test_user;
 DB_USER=your_user_name
 DB_PASSWORD=your_password
 DB_NAME=your_db_name
-DB_HOST=localhost
-DB_PORT=5432
 ```
 
 5. **Run the app**
