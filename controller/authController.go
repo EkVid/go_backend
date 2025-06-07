@@ -57,3 +57,8 @@ func Register(c *gin.Context){
 
 	c.JSON(http.StatusOK, gin.H{"success": true})
 }
+
+func Logout(c *gin.Context){
+	c.SetCookie("isAuthenticated", "false", -1, "/", "localhost", false, true)
+	c.JSON(http.StatusOK, gin.H{"success": true})
+}

@@ -10,6 +10,6 @@ func AuthRoutes(router *gin.Engine) {
 	{
 		auth.POST("/login", controller.Login)
 		auth.POST("/register", controller.Register)
-		// auth.GET("/logout", controller.Logout)
+		auth.POST("/logout", controller.Logout)
 	}
 }
