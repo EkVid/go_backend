@@ -40,6 +40,7 @@ func main() {
 	}))
 
 	routes.AuthRoutes(r)
+	routes.QuestionRoutes(r)
 
 	r.Run(":8080")
 }
