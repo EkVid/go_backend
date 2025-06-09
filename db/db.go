@@ -18,5 +18,5 @@ func Connect(user, password, dbname string) {
 
     DB = db
     fmt.Println("Database connected")
-	DB.AutoMigrate(&models.User{})
+	DB.AutoMigrate(&models.User{}, &models.Question{})
 }
